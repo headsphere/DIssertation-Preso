@@ -6,7 +6,7 @@ framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
-mode        : standalone # {selfcontained, standalone, draft}
+mode        : selfcontained # {selfcontained, standalone, draft}
 ---
 
 <!-- Limit image width and height -->
@@ -26,13 +26,14 @@ $(function() {
 </script>
 
 
-## Introduction
+## The Lemon Problem
+!['Lemon'](assets/img/lemons.jpg)
 
-1. Introduction to Adverse Selection, PIN, VPIN
-2. Sequential Trade Model and Simulation of Data
-3. Demonstration of HMM decoding of states with cluster analysis
-4. Regressing VPIN against hidden states
-5. Empirical study results
+> 1. Introduction to Adverse Selection, PIN, VPIN
+> 2. Sequential Trade Model and Simulation of Data
+> 3. Demonstration of HMM decoding of states with cluster analysis
+> 4. Regressing VPIN against hidden states
+> 5. Empirical study results
 
 --- .class #id 
 
@@ -43,6 +44,10 @@ $(function() {
 > 2. Adverse Selection from Toxic Order Flow
 > 3. Order flow is signed to determine direction of trading activity
 > 4. Quote Rule, Lee-Ready Rule help infer toxicity...
+
+--- 
+## Flash Crash - May 6th 2010
+!['FlashCrash'](assets/img/Flash_Crash.jpg)
 
 --- &twocol w1:50% w2:50%
 ## Sequential Trading Model and Classic PIN
@@ -77,10 +82,6 @@ $$\underbrace{\alpha (1 - \delta) (\epsilon + \mu + \epsilon) }_\text{Volume fro
 > 4. Volume Synchronised Probability of Information-based Trading (VPIN) can hence be derived:
 $$VPIN = \frac{\alpha \mu}{\alpha \mu + 2 \epsilon} = \frac{\alpha \mu}{V}  \approx  \frac{\sum_{\tau = 1}^n |V_{\tau}^S - V_{\tau}^B|}{n V}$$
 Volume-￼Synchronized Probability of Informddddde
-
---- 
-## Flash Crash - May 6th 2010
-!['FlashCrash'](assets/img/Flash_Crash.jpg)
 
 --- &twocol w1:50% w2:50%
 ## Simulation Study
@@ -121,13 +122,6 @@ $$\alpha =0.28, \delta = 0.33, \mu = 55, \epsilon=22.3$$
 $$\alpha =0.28, \delta = 0.33, \mu = 55, \epsilon=22.3$$
 
 !['Poisson'](assets/img/sim-poisson-mixture.jpg)
-
---- 
-## Exploratory Data Analysis #3
-
-$$\alpha =0.28, \delta = 0.33, \mu = 55, \epsilon=22.3$$
-
-!['Poisson'](assets/img/sim-clusters.jpg)
 
 --- 
 ## Fitting a Bivariate Poisson Hidden Markov Model
@@ -200,6 +194,13 @@ $$\boldsymbol{\Gamma}(1) =
 
 >- Hence the likelihood (where $\boldsymbol{\delta}$ is the stationary hidden state distribution, assuming it exists)
 $$L_T = \boldsymbol{\delta} \mathbf{P}(x_1) \boldsymbol{\Gamma} \mathbf{P}(x_2) \dots   \boldsymbol{\Gamma} \mathbf{P}(x_T) \mathbf{1'}$$
+
+--- 
+## Exploratory Data Analysis #3
+
+$$\alpha =0.28, \delta = 0.33, \mu = 55, \epsilon=22.3$$
+
+!['Poisson'](assets/img/sim-clusters.jpg)
 
 --- 
 ## Decoding the Fitted Hidden Markov Model
@@ -311,4 +312,4 @@ $$\begin{align}
 > 5. !['States'](http://i2.kym-cdn.com/photos/images/original/000/879/348/504.gif)
 
 --- 
-## Any Questions?
+## Questions?
